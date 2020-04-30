@@ -8,26 +8,28 @@
       
     <title></title>
   </head>
-  <body>
-  
+  <body>  
 <?php 
 
-
-echo"<div ><fieldset> ";
-echo"<legend> saab 9-3 turbo cab </legend>";
-
-echo"<img src=\"imgs/saab.jpg\" height=\"40\" width=\"40\" >";
+$bilar=array
+(
+array("rubrik"=>"saab 9-3 turbo cab","bild"=>"saab.jpg","pris"=>"100","beskrivning"=>"inte hel mellan hålen" ),
+array("rubrik"=>"volvo t5r t-gul","bild"=>"saab.jpg","pris"=>"400 000","beskrivning"=>"elproblem, trasiga stag" ),
+array("rubrik"=>"mazda","bild"=>"saab.jpg","pris"=>"2000","beskrivning"=>"det bästa pengar kan köpa" )
   
-echo"pris 200kr ";
-echo"mycket fin saab med full servicebok";
+);
 
+foreach ($bilar as $bil) {
 
-echo"</fieldset></div>"
-
-
-
-
-
+echo<<<ARTIKEL
+<div ><fieldset> 
+<legend>{$bil['rubrik']} </legend>
+<img src="imgs/{$bil['bild']}" >
+{$bil['pris']}<br>
+ {$bil['beskrivning']}
+</fieldset></div>
+ARTIKEL;
+}
  ?>
  
  
