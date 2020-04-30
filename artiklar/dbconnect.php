@@ -7,7 +7,7 @@ public $pdo;
   public function __construct(){
 
     $host = '127.0.0.1';
-    $db   = 'webbshop1920';
+    $db   = 'bte18bilar';
     $user = 'root';
     $pass = '';
     $charset = 'utf8mb4';

@@ -10,7 +10,7 @@
   </head>
   <body>  
 <?php 
-
+/*
 $bilar=array
 (
 array("rubrik"=>"saab 9-3 turbo cab","bild"=>"saab.jpg","pris"=>"100","beskrivning"=>"inte hel mellan hålen" ),
@@ -18,6 +18,18 @@ array("rubrik"=>"volvo t5r t-gul","bild"=>"saab.jpg","pris"=>"400 000","beskrivn
 array("rubrik"=>"mazda","bild"=>"saab.jpg","pris"=>"2000","beskrivning"=>"det bästa pengar kan köpa" )
   
 );
+*/
+
+require('dbconnect.php');
+
+$dbconn=new dbconnect();
+
+$stmt=$dbconn->pdo->query('select * from bilar');
+$stmt->execute();
+
+$bilar=$stmt->fetchAll();
+
+print_r($bilar);
 
 foreach ($bilar as $bil) {
 
